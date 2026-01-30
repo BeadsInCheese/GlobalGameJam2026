@@ -5,7 +5,7 @@ func on_collision(bullet,target):
 	pass
 	
 	
-func on_process(bullet,target):
+func on_process(bullet):
 	pass
 	
 	

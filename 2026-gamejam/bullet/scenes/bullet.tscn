@@ -26,4 +26,5 @@ texture = ExtResource("1_ay61v")
 [node name="kill timer" type="Timer" parent="." unique_id=2023596523]
 autostart = true
 
+[connection signal="body_entered" from="." to="." method="on_collision"]
 [connection signal="timeout" from="kill timer" to="." method="_on_kill_timer_timeout"]

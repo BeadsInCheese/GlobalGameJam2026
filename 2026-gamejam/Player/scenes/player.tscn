@@ -7,12 +7,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0e3"]
 radius = 51.24451
 
-[node name="player" type="CharacterBody2D" unique_id=449410140]
+[node name="Player" type="CharacterBody2D" unique_id=449410140]
 script = ExtResource("1_wmpps")
 speed = 8
 bullet_base = ExtResource("2_ekj7i")
 
-[node name="graphics" type="Sprite2D" parent="." unique_id=18194606]
+[node name="Graphics" type="Sprite2D" parent="." unique_id=18194606]
 texture = ExtResource("2_xr54b")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=688682804]

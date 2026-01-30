@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_kill_timer_timeout() -> void:
 	queue_free()
+
+
+func on_collision(body: Node) -> void:
+	for modifier in modifiers:
+		modifier.on_collision(self,body)
+	
