@@ -9,7 +9,6 @@ func shoot(direction:Vector2):
 	bullet.direction=direction
 	get_tree().root.add_child(bullet)
 
-	print(bullet.global_position)
 
 
 func _process(delta: float) -> void:
