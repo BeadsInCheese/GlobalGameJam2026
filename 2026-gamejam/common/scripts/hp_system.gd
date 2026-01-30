@@ -1,4 +1,4 @@
 extends Node
-
+signal damage_taken
 func take_damage(dmg:float):
-	print(dmg)
+	damage_taken.emit(dmg)

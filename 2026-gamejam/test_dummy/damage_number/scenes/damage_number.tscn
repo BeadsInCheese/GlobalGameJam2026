@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bu3l08h5nieyp"]
+
+[ext_resource type="FontFile" uid="uid://b0b2iavmpldi1" path="res://test_dummy/gfx/fonts/GoogleSansCode-Regular.ttf" id="1_xelkb"]
+[ext_resource type="Script" uid="uid://cnccehvr8jvf5" path="res://test_dummy/damage_number/scripts/damage_number.gd" id="2_q77h6"]
+
+[sub_resource type="Theme" id="Theme_ylcc6"]
+default_font = ExtResource("1_xelkb")
+default_font_size = 18
+
+[node name="DamageNumber" type="Label" unique_id=1614061091]
+scale = Vector2(0.24, 0.24)
+theme = SubResource("Theme_ylcc6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+script = ExtResource("2_q77h6")
+
+[node name="Timer" type="Timer" parent="." unique_id=291215889]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

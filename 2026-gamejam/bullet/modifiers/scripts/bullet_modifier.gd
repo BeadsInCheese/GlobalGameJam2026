@@ -11,3 +11,7 @@ func on_process(bullet):
 	
 func get_damage_additive():
 	pass
+	
+	
+func on_ready(bullet):
+	pass

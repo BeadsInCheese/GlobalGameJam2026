@@ -2,8 +2,12 @@ extends CharacterBody2D
 @export var speed=2
 @export var shoot_offset=2
 @export var bullet_base:PackedScene
-
+var can_shoot=true
 func shoot(direction:Vector2):
+	if !can_shoot:
+		return
+	can_shoot=false
+	$Cooldown.start()
 	var bullet=bullet_base.instantiate()
 	bullet.global_position=global_position+direction*shoot_offset
 	bullet.direction=direction
@@ -25,3 +29,7 @@ func _process(delta: float) -> void:
 	
 	move_and_collide(velocity.normalized()*speed)
 	velocity=Vector2(0,0)
+
+
+func _on_cooldown_timeout() -> void:
+	can_shoot=true

@@ -1,9 +1,12 @@
 extends RigidBody2D
 var direction:Vector2
 var speed=40
-@export var modifiers:BulletModifier
+var damage=1
+
+@export var modifiers:Array[BulletModifier]
 func _ready() -> void:
-	pass
+	for modifier in modifiers:
+		modifier.on_ready(self)
 	
 	
 func _process(delta: float) -> void:
@@ -18,4 +21,5 @@ func _on_kill_timer_timeout() -> void:
 func on_collision(body: Node) -> void:
 	for modifier in modifiers:
 		modifier.on_collision(self,body)
-	
+	body.take_damage(damage)
+	queue_free()
