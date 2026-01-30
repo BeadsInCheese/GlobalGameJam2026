@@ -14,13 +14,13 @@ func shoot(direction:Vector2):
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("shoot_mouse"):
 		shoot(-(global_position-get_global_mouse_position()).normalized())
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("down"):
 		velocity.y+=1
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("up"):
 		velocity.y-=1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("left"):
 		velocity.x-=1
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("right"):
 		velocity.x+=1
 	
 	move_and_collide(velocity.normalized()*speed)
