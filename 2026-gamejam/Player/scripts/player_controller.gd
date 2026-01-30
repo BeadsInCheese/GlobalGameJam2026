@@ -12,6 +12,7 @@ func shoot(direction:Vector2):
 	bullet.global_position=global_position+direction*shoot_offset
 	bullet.direction=direction
 	get_tree().root.add_child(bullet)
+	$ShootAudioPlayer.play()
 
 
 

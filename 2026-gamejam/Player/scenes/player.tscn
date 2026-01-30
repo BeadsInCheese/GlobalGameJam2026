@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ccmvwevmjsxnu" path="res://Player/scripts/player_controller.gd" id="1_wmpps"]
 [ext_resource type="PackedScene" uid="uid://b7o81b2iqwdkc" path="res://bullet/scenes/bullet.tscn" id="2_ekj7i"]
 [ext_resource type="Texture2D" uid="uid://5n5ptr54fxyw" path="res://Player/gfx/placeholder.png" id="2_xr54b"]
+[ext_resource type="AudioStream" uid="uid://br0a3o81yy3pq" path="res://sfx/shoot1.wav" id="4_ekj7i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0e3"]
 radius = 51.24451
@@ -20,5 +21,10 @@ shape = SubResource("CircleShape2D_fc0e3")
 
 [node name="Cooldown" type="Timer" parent="." unique_id=1465622112]
 wait_time = 0.13
+
+[node name="ShootAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=778497090]
+stream = ExtResource("4_ekj7i")
+volume_db = -17.79
+pitch_scale = 1.01
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
