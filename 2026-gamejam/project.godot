@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://b2l7gwgu1se0r"
 
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
+
 [input]
 
 shoot_mouse={
