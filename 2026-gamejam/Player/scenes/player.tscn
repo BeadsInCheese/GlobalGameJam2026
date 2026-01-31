@@ -5,9 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://5n5ptr54fxyw" path="res://Player/gfx/placeholder.png" id="2_xr54b"]
 [ext_resource type="AudioStream" uid="uid://br0a3o81yy3pq" path="res://sfx/shoot1.wav" id="4_ekj7i"]
 [ext_resource type="Script" uid="uid://cpiatq2fgjsbh" path="res://Player/scenes/ammo_ui.gd" id="5_bed1q"]
+[ext_resource type="FontFile" uid="uid://b0b2iavmpldi1" path="res://test_dummy/gfx/fonts/GoogleSansCode-Regular.ttf" id="5_cgdry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0e3"]
 radius = 51.24451
+
+[sub_resource type="Theme" id="Theme_r6dbh"]
+default_font = ExtResource("5_cgdry")
 
 [node name="Player" type="CharacterBody2D" unique_id=449410140]
 scale = Vector2(0.25, 0.25)
@@ -38,6 +42,7 @@ offset_left = 875.0
 offset_top = 519.0
 offset_right = 1122.0
 offset_bottom = 651.0
+theme = SubResource("Theme_r6dbh")
 script = ExtResource("5_bed1q")
 
 [connection signal="on_ammo_changed" from="." to="CanvasLayer/RichTextLabel" method="update"]
