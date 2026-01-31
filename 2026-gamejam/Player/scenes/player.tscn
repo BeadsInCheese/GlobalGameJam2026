@@ -3,13 +3,16 @@
 [ext_resource type="Script" uid="uid://ccmvwevmjsxnu" path="res://Player/scripts/player_controller.gd" id="1_wmpps"]
 [ext_resource type="PackedScene" uid="uid://b7o81b2iqwdkc" path="res://bullet/scenes/bullet.tscn" id="2_ekj7i"]
 [ext_resource type="Texture2D" uid="uid://5n5ptr54fxyw" path="res://Player/gfx/placeholder.png" id="2_xr54b"]
+[ext_resource type="AudioStream" uid="uid://br0a3o81yy3pq" path="res://sfx/shoot1.wav" id="4_ekj7i"]
+[ext_resource type="Script" uid="uid://cpiatq2fgjsbh" path="res://Player/scenes/ammo_ui.gd" id="5_bed1q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0e3"]
 radius = 51.24451
 
 [node name="Player" type="CharacterBody2D" unique_id=449410140]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_wmpps")
-speed = 8
+speed = 4
 bullet_base = ExtResource("2_ekj7i")
 
 [node name="Graphics" type="Sprite2D" parent="." unique_id=18194606]
@@ -21,4 +24,21 @@ shape = SubResource("CircleShape2D_fc0e3")
 [node name="Cooldown" type="Timer" parent="." unique_id=1465622112]
 wait_time = 0.13
 
+[node name="ShootAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=778497090]
+stream = ExtResource("4_ekj7i")
+volume_db = -17.79
+pitch_scale = 1.01
+bus = &"sfx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=261998800]
+follow_viewport_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=774023699]
+offset_left = 875.0
+offset_top = 519.0
+offset_right = 1122.0
+offset_bottom = 651.0
+script = ExtResource("5_bed1q")
+
+[connection signal="on_ammo_changed" from="." to="CanvasLayer/RichTextLabel" method="update"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
