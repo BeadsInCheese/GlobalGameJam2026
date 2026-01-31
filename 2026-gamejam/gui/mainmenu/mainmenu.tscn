@@ -45,6 +45,7 @@ text = "Quit"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1652628776]
 stream = ExtResource("3_i33jq")
 autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
