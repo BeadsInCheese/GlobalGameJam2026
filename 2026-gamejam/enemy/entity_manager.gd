@@ -8,4 +8,8 @@ var data = {
 }
 
 func _ready() -> void:
-	find_parent("game").get_node("enemy").get_node("HPSystem").max_hp = 14
+	pass
+	
+
+func _process(delta: float) -> void:
+	pass
