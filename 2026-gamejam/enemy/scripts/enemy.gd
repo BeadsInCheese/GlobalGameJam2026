@@ -1,14 +1,21 @@
+class_name Enemy
 extends CharacterBody2D
 
 @export var stats : Resource
 var player
 @export var speed: float = 70.0
 
+signal destroyed
+
 func _ready() -> void:
 	player = find_parent("game").get_node("Player")
 	$HPSystem.current_hp = stats.max_hp
 	$Sprite2D.texture = stats.texture
 	speed = stats.speed
+	$Sprite2D.texture
+	var parent = get_parent()
+	if parent and parent.has_method("_on_enemy_destroyed"):
+		destroyed.connect(parent._on_enemy_destroyed)
 
 func on_collision(body,normal):
 	if body.has_method("take_damage"):
@@ -17,6 +24,9 @@ func on_collision(body,normal):
 func _physics_process(delta: float) -> void:
 	if !player:
 		return
+	if stats.behavior_type == 2: # stationary
+		return
+
 	$NavigationAgent2D.target_position = player.position
 	
 	if $NavigationAgent2D.is_navigation_finished():
@@ -45,6 +55,6 @@ func apply_status(status):
 func modify_speed(multiplier):
 	speed*=multiplier
 	
-	
 func _on_enemy_death() -> void:
+	destroyed.emit(stats.required_to_destroy)
 	self.queue_free()
