@@ -5,9 +5,10 @@
 [ext_resource type="Resource" uid="uid://c824xtbnnpaoc" path="res://enemy/scripts/bot_stats.tres" id="2_kx3vi"]
 [ext_resource type="Shader" uid="uid://cyh3ailjggp85" path="res://test_dummy/shaders/hit_flash.gdshader" id="3_tbjim"]
 [ext_resource type="Script" uid="uid://rjoquxj1r8v5" path="res://test_dummy/scripts/hitflash.gd" id="4_aik1y"]
-[ext_resource type="Script" path="res://test_dummy/scripts/damage_text_spawner.gd" id="5_0lfw3"]
+[ext_resource type="Script" uid="uid://4sy2e5o7hqcr" path="res://test_dummy/scripts/damage_text_spawner.gd" id="5_0lfw3"]
 [ext_resource type="PackedScene" uid="uid://bu3l08h5nieyp" path="res://test_dummy/damage_number/scenes/damage_number.tscn" id="6_tbjim"]
 [ext_resource type="Script" uid="uid://pnsv1vruhbv5" path="res://common/scripts/hp_system.gd" id="7_0lfw3"]
+[ext_resource type="Script" uid="uid://wdcslwxod72y" path="res://status_effects/scripts/status_system.gd" id="9_mgbwo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mgbwo"]
 resource_local_to_scene = true
@@ -41,6 +42,11 @@ script = ExtResource("7_0lfw3")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1384527015]
 radius = 16.0
 
+[node name="StatusSystem" type="Node" parent="." unique_id=1600572096]
+script = ExtResource("9_mgbwo")
+
 [connection signal="damage_taken" from="HPSystem" to="Sprite2D" method="hit_flash"]
 [connection signal="damage_taken" from="HPSystem" to="DamageTextSpawner" method="create_text"]
 [connection signal="on_death" from="HPSystem" to="." method="_on_enemy_death"]
+[connection signal="change_speed_mult" from="StatusSystem" to="." method="modify_speed"]
+[connection signal="take_damage" from="StatusSystem" to="." method="take_damage"]

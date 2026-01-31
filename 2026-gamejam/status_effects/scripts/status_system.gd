@@ -2,6 +2,7 @@ extends Node
 class_name StatusSystem
 
 signal take_damage(dmg)
+signal change_speed_mult(mult)
 var statuses:Array
 
 var tick_length=0.5
@@ -9,6 +10,7 @@ var tick_timer=0
 
 func apply_status(status):
 	print("append satatus")
+	status.on_apply(self)
 	statuses.append([status,status.duration])
 
 
@@ -20,6 +22,7 @@ func _process(delta: float) -> void:
 		tick_timer-=delta
 		statuses[status_index][1]-=delta
 		if(statuses[status_index][1]<=0):
+			statuses[status_index][0].on_expire(self)
 			statuses.remove_at(status_index)
 			break
 			

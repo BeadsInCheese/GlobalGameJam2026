@@ -21,6 +21,13 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(f: float):
 	get_node("HPSystem").take_damage(f)
-
+	
+func apply_status(status):
+	$StatusSystem.apply_status(status)
+	
+func modify_speed(multiplier):
+	speed*=multiplier
+	
+	
 func _on_enemy_death() -> void:
 	self.queue_free()
