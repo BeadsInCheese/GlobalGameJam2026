@@ -4,9 +4,12 @@ var direction:Vector2
 var speed=10
 var damage=1
 var bounces=2
+var bullet_spread=0.5
 
 @export var modifiers:Array[BulletModifier]
 func _ready() -> void:
+	var angle=atan2(direction.x,direction.y)+(randf()-0.5)*bullet_spread
+	direction=Vector2(sin(angle),cos(angle))
 	for modifier in modifiers:
 		modifier.on_ready(self)
 	rotation=-atan2(direction.x,direction.y)
