@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blvm5a3tj6sr6" path="res://gui/mainmenu/mainmenu.gd" id="1_i41bq"]
 [ext_resource type="Texture2D" uid="uid://ofepld5qr6u0" path="res://gui/mainmenu/Screenshot from 2026-01-31 01-23-34.png" id="2_1dyev"]
+[ext_resource type="AudioStream" uid="uid://dxpwix2ufk6th" path="res://sfx/music/menu_music.mp3" id="3_i33jq"]
 
 [node name="Node2D" type="Node2D" unique_id=1410049563]
 script = ExtResource("1_i41bq")
@@ -40,6 +41,10 @@ text = "Options"
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=894199797]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1652628776]
+stream = ExtResource("3_i33jq")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
