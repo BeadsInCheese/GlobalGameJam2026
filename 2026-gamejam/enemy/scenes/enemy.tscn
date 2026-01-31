@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bss2eiym8q2h6"]
 
-[ext_resource type="Texture2D" uid="uid://bhfqtmxjqu7t3" path="res://enemy/gfx/Doge-Meme-PNG-Photos.png" id="1_it1ce"]
 [ext_resource type="Script" uid="uid://h1oytqmgsvkq" path="res://enemy/scripts/enemy.gd" id="1_kx3vi"]
 [ext_resource type="Resource" path="res://enemy/scripts/probe.tres" id="2_mgbwo"]
 [ext_resource type="Shader" uid="uid://cyh3ailjggp85" path="res://damage_number/shaders/hit_flash.gdshader" id="3_tbjim"]
@@ -25,11 +24,9 @@ stats = ExtResource("2_mgbwo")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=344603810]
 material = SubResource("ShaderMaterial_mgbwo")
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_it1ce")
 script = ExtResource("4_aik1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516508176]
-position = Vector2(1.78125, 8)
 shape = SubResource("CircleShape2D_tbjim")
 
 [node name="DamageTextSpawner" type="Node2D" parent="." unique_id=66517902]

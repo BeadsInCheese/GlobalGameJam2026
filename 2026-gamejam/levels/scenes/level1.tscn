@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dd0wcn1rdfdog" path="res://levels/scenes/level2.tscn" id="2_q64m3"]
 [ext_resource type="Shader" uid="uid://dqlilfb6335f0" path="res://levels/gfx/shaders/walls.gdshader" id="3_5gc80"]
 [ext_resource type="Script" uid="uid://c8p0g22rh8umt" path="res://levels/scripts/objective.gd" id="5_rxopl"]
+[ext_resource type="PackedScene" uid="uid://do8dgqm8min8h" path="res://spawner/scenes/spawner.tscn" id="7_pa477"]
+[ext_resource type="PackedScene" uid="uid://bss2eiym8q2h6" path="res://enemy/scenes/enemy.tscn" id="8_dk4fn"]
+[ext_resource type="Resource" path="res://enemy/scripts/surveyor.tres" id="9_ipcux"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nu5d5"]
 vertices = PackedVector2Array(16, 16, 0, 16, 0, 0, 16, 0)
@@ -405,5 +408,21 @@ script = ExtResource("5_rxopl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objective" unique_id=1138165446]
 position = Vector2(2335, -79.5)
 shape = SubResource("RectangleShape2D_q64m3")
+
+[node name="Spawner" parent="." unique_id=1666583375 instance=ExtResource("7_pa477")]
+position = Vector2(245, 734)
+
+[node name="Spawner2" parent="." unique_id=1524289373 instance=ExtResource("7_pa477")]
+position = Vector2(2075, 849)
+
+[node name="Spawner3" parent="." unique_id=979856153 instance=ExtResource("7_pa477")]
+position = Vector2(1546, -45)
+
+[node name="enemy" parent="." unique_id=12073678 instance=ExtResource("8_dk4fn")]
+position = Vector2(761, 125)
+
+[node name="enemy2" parent="." unique_id=1230886454 instance=ExtResource("8_dk4fn")]
+position = Vector2(146, 182)
+stats = ExtResource("9_ipcux")
 
 [connection signal="body_entered" from="Objective" to="Objective" method="_on_body_entered"]
