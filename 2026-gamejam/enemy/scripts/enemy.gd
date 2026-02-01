@@ -11,6 +11,8 @@ signal destroyed
 
 var item_base = preload("res://item/scenes/items.tscn")
 
+var movement_force = Vector2()
+
 
 func _ready() -> void:
 	player = find_parent("game").get_node("Player")
@@ -26,12 +28,15 @@ func _ready() -> void:
 
 	if stats.behavior_type == 2:
 		$HPBar.visible = true
-		
 
 
 func on_collision(body, normal):
 	if body.has_method("take_damage"):
 		body.take_damage(stats.ce)
+
+
+func apply_force(knock_back: Vector2):
+	movement_force += knock_back
 
 
 func _physics_process(delta: float) -> void:
@@ -47,8 +52,13 @@ func _physics_process(delta: float) -> void:
 
 	var next_path = $NavigationAgent2D.get_next_path_position()
 	var direction = (next_path - position).normalized()
-	velocity = direction * speed
 
+	var accel = stats.accel * max(speed - max(movement_force.normalized().dot(direction), 0) * movement_force.length(), 0)
+
+	movement_force += direction * accel
+
+	velocity = movement_force
+	movement_force = movement_force * 0.9
 	move_and_slide()
 
 	for i in get_slide_collision_count():
@@ -61,7 +71,8 @@ func _physics_process(delta: float) -> void:
 func take_damage(f: float):
 	get_node("HPSystem").take_damage(f)
 	if stats.behavior_type == 2:
-		$HPBar.value =  get_node("HPSystem").current_hp / stats.max_hp
+		$HPBar.value = get_node("HPSystem").current_hp / stats.max_hp
+
 
 func apply_status(status):
 	$StatusSystem.apply_status(status)
