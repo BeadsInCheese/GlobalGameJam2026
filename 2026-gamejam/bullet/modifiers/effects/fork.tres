@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ModifyStats" format=3 uid="uid://cjciymsc4fp2g"]
+
+[ext_resource type="Script" uid="uid://cpim1aeu3nmju" path="res://bullet/modifiers/scripts/modify_stats.gd" id="1_cqgun"]
+
+[resource]
+script = ExtResource("1_cqgun")
+extra_bullets_add = 1
+metadata/_custom_type_script = "uid://cpim1aeu3nmju"
