@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(f: float):
 	get_node("HPSystem").take_damage(f)
-	print(get_node("HPSystem").current_hp)
+	#print(get_node("HPSystem").current_hp)
 
 
 func apply_status(status):

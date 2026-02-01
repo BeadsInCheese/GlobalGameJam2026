@@ -69,7 +69,7 @@ func add_weapon_effect(effect):
 func take_damage(f: float):
 	get_node("HPSystem").take_damage(f)
 	$HUD/HpLabel.update_label()
-	print(get_node("HPSystem").current_hp)
+	#print(get_node("HPSystem").current_hp)
 
 
 func _on_cooldown_timeout() -> void:

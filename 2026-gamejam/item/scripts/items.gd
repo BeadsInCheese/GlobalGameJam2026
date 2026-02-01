@@ -13,4 +13,5 @@ func accuire(player):
 	queue_free()
 	if player.has_method("add_weapon_effect"):
 		for effect in effects:
+			print("accuired " + item_data.item_name)
 			player.add_weapon_effect(effect)

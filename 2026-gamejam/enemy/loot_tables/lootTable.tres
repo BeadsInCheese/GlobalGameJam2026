@@ -13,14 +13,16 @@
 [ext_resource type="Resource" uid="uid://dodmhhq1rki6r" path="res://bullet/modifiers/effects/bounces_add.tres" id="10_mx86c"]
 [ext_resource type="Resource" uid="uid://1r37okqx7pka" path="res://bullet/modifiers/effects/fire_rate_up.tres" id="11_ij1h4"]
 [ext_resource type="Resource" uid="uid://3eywji2lybw1" path="res://bullet/modifiers/effects/spread_down.tres" id="12_dfphh"]
+[ext_resource type="Resource" uid="uid://cbkq5g57kqsjd" path="res://bullet/modifiers/effects/homing.tres" id="13_ij1h4"]
 
 [sub_resource type="Resource" id="Resource_swg3u"]
 script = ExtResource("3_5vwud")
-damage = 10000.0
+damage = 10.0
 metadata/_custom_type_script = "uid://ccj6btntd07nb"
 
 [sub_resource type="Resource" id="Resource_j13ep"]
 script = ExtResource("4_tfwwr")
+item_name = "damage up"
 visual = ExtResource("5_7u302")
 effects = Array[ExtResource("2_o6jnx")]([SubResource("Resource_swg3u")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -33,6 +35,7 @@ metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_ij1h4"]
 script = ExtResource("4_tfwwr")
+item_name = "overheat"
 visual = ExtResource("5_7u302")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("6_swg3u")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -45,18 +48,20 @@ metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_0ivl1"]
 script = ExtResource("4_tfwwr")
+item_name = "missile"
 visual = ExtResource("8_yefq7")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("7_j13ep")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
 
 [sub_resource type="Resource" id="Resource_2xcoy"]
 script = ExtResource("1_wsatr")
-prob = 0.115
+prob = 0.001
 item = SubResource("Resource_0ivl1")
 metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_oq15w"]
 script = ExtResource("4_tfwwr")
+item_name = "stun"
 visual = ExtResource("8_yefq7")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("9_mx86c")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -69,6 +74,7 @@ metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_s3wwk"]
 script = ExtResource("4_tfwwr")
+item_name = "bounce up"
 visual = ExtResource("8_yefq7")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("10_mx86c")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -81,6 +87,7 @@ metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_aycfa"]
 script = ExtResource("4_tfwwr")
+item_name = "firerate up"
 visual = ExtResource("8_yefq7")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("11_ij1h4")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -93,6 +100,7 @@ metadata/_custom_type_script = "uid://cks7faykpffxh"
 
 [sub_resource type="Resource" id="Resource_httvm"]
 script = ExtResource("4_tfwwr")
+item_name = "spread down"
 visual = ExtResource("8_yefq7")
 effects = Array[ExtResource("2_o6jnx")]([ExtResource("12_dfphh")])
 metadata/_custom_type_script = "uid://b2qo1s3jeebak"
@@ -103,7 +111,20 @@ prob = 0.17
 item = SubResource("Resource_httvm")
 metadata/_custom_type_script = "uid://cks7faykpffxh"
 
+[sub_resource type="Resource" id="Resource_56281"]
+script = ExtResource("4_tfwwr")
+item_name = "homing"
+visual = ExtResource("8_yefq7")
+effects = Array[ExtResource("2_o6jnx")]([ExtResource("13_ij1h4")])
+metadata/_custom_type_script = "uid://b2qo1s3jeebak"
+
+[sub_resource type="Resource" id="Resource_27fb2"]
+script = ExtResource("1_wsatr")
+prob = 0.001
+item = SubResource("Resource_56281")
+metadata/_custom_type_script = "uid://cks7faykpffxh"
+
 [resource]
 script = ExtResource("1_75xex")
-entrys = Array[ExtResource("1_wsatr")]([SubResource("Resource_waxgj"), SubResource("Resource_dfphh"), SubResource("Resource_2xcoy"), SubResource("Resource_gfnrp"), SubResource("Resource_l6it6"), SubResource("Resource_057vi"), SubResource("Resource_wpq0r")])
+entrys = Array[ExtResource("1_wsatr")]([SubResource("Resource_waxgj"), SubResource("Resource_dfphh"), SubResource("Resource_2xcoy"), SubResource("Resource_gfnrp"), SubResource("Resource_l6it6"), SubResource("Resource_057vi"), SubResource("Resource_wpq0r"), SubResource("Resource_27fb2")])
 metadata/_custom_type_script = "uid://b63i3hkj1semy"
