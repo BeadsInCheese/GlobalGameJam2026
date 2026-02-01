@@ -6,9 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://br0a3o81yy3pq" path="res://sfx/shoot1.wav" id="4_ekj7i"]
 [ext_resource type="Script" uid="uid://cpiatq2fgjsbh" path="res://Player/scenes/ammo_ui.gd" id="5_bed1q"]
 [ext_resource type="FontFile" uid="uid://b0b2iavmpldi1" path="res://damage_number/fonts/GoogleSansCode-Regular.ttf" id="5_cgdry"]
-[ext_resource type="Script" uid="uid://b0kidk2q7wo8j" path="res://Player/scripts/hp_label.gd" id="6_obsiq"]
+[ext_resource type="Script" path="res://Player/scripts/hp_label.gd" id="6_obsiq"]
 [ext_resource type="Script" uid="uid://pnsv1vruhbv5" path="res://common/scripts/hp_system.gd" id="7_r6dbh"]
-[ext_resource type="Script" uid="uid://cn2qfpqmj3vqp" path="res://Player/scripts/time_label.gd" id="8_latqv"]
+[ext_resource type="Script" path="res://Player/scripts/time_label.gd" id="8_latqv"]
 [ext_resource type="Script" uid="uid://bxqmhme35bybr" path="res://Player/scripts/game_over_screen.gd" id="9_dy67d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fc0e3"]
