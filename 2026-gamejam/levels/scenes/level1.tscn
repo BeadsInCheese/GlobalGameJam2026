@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bss2eiym8q2h6" path="res://enemy/scenes/enemy.tscn" id="8_dk4fn"]
 [ext_resource type="Resource" uid="uid://6ehydwdjxn8t" path="res://enemy/scripts/surveyor.tres" id="9_ipcux"]
 [ext_resource type="Resource" uid="uid://88nh0m0m0kd0" path="res://enemy/scripts/database.tres" id="10_ipcux"]
-[ext_resource type="Script" uid="uid://cpkp3pjv0dinh" path="res://levels/scripts/objective.gd" id="10_xi6mh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nu5d5"]
 shader = ExtResource("3_5gc80")
@@ -357,9 +356,6 @@ navigation_layer_0/layers = 5
 sources/1 = SubResource("TileSetAtlasSource_fawwh")
 sources/4 = SubResource("TileSetAtlasSource_5s85p")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tny0n"]
-size = Vector2(72, 44)
-
 [node name="Level" type="Node2D" unique_id=373504876]
 script = ExtResource("1_nu5d5")
 next_level = ExtResource("2_q64m3")
@@ -402,14 +398,3 @@ stats = ExtResource("10_ipcux")
 position = Vector2(1978, 259)
 collision_layer = 16
 stats = ExtResource("10_ipcux")
-
-[node name="Objective" type="Area2D" parent="." unique_id=1994530469]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("10_xi6mh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objective" unique_id=71739052]
-position = Vector2(496, 127)
-shape = SubResource("RectangleShape2D_tny0n")
-
-[connection signal="body_entered" from="Objective" to="Objective" method="_on_body_entered"]
