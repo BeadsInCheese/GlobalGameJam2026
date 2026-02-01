@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed = 200
 @export var shoot_offset = 2
 @export var bullet_base: PackedScene
-@export var max_ammo = 2
+@export var max_ammo = 100
 
 var upgrades: Array[BulletModifier]
 var current_ammo
