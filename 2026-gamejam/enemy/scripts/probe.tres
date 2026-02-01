@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_jmh53")
 max_hp = 100
+ce = 10
 speed = 150.0
 texture = ExtResource("2_qhljw")

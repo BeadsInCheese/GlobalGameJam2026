@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cn0rl0agqvtm4"]
+
+[ext_resource type="Texture2D" uid="uid://bfa8vj4wx62oi" path="res://enemy/gfx/Screenshot from 2026-01-31 23-28-50.png" id="1_w0dd5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5du1b"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1409708766]
+material = SubResource("CanvasItemMaterial_5du1b")
+texture = ExtResource("1_w0dd5")

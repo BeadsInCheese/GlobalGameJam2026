@@ -8,7 +8,8 @@ extends Resource
 @export var ce_regen : int
 @export var speed : float
 @export var texture : Texture2D
-@export_enum("Target player", "Random paths", "Stationary")
+@export var bullet_dmg : float
+@export_enum("Ranged", "Melee", "Stationary")
 var behavior_type: int
 @export var required_to_destroy: bool = false
 
