@@ -28,6 +28,10 @@ func reload(delay: float = 0.5):
 	on_ammo_changed.emit(current_ammo)
 
 
+func apply_status(status):
+	$StatusSystem.apply_status(status)
+
+
 func shoot(direction: Vector2):
 	if !can_shoot:
 		return
