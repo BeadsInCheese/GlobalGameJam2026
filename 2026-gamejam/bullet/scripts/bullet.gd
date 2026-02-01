@@ -8,6 +8,7 @@ var bounces = 0
 var knock_back = 0
 var bullet_spread = 0.5
 var cooldown = 0.5
+var extra_bullets = 0
 @export var modifiers: Array[BulletModifier]
 
 var bodies = []
