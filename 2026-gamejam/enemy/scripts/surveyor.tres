@@ -10,5 +10,6 @@ max_hp = 140
 ce = 10
 speed = 100.0
 texture = ExtResource("2_pmdj3")
+behavior_type = 1
 loot_table = ExtResource("1_bhirs")
 metadata/_custom_type_script = "uid://belqso5dfrbjv"

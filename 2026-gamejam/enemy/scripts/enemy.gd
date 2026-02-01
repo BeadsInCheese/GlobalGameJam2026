@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 var player
 @export var speed: float = 70.0
+var target = true
 var loot_table: LootTable
 signal destroyed
 
@@ -20,6 +21,12 @@ func _ready() -> void:
 	var parent = get_parent()
 	if parent and parent.has_method("_on_enemy_destroyed"):
 		destroyed.connect(parent._on_enemy_destroyed)
+
+	$AINode.type = stats.behavior_type
+
+	if stats.behavior_type == 2:
+		$HPBar.visible = true
+		
 
 
 func on_collision(body, normal):

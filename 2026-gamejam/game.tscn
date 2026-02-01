@@ -10,6 +10,8 @@
 
 [node name="Player" parent="." unique_id=449410140 instance=ExtResource("1_80nbo")]
 position = Vector2(533, 297)
+collision_layer = 1
+collision_mask = 1
 shoot_offset = 20
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=649231474]
@@ -22,3 +24,4 @@ position_smoothing_speed = 10.0
 stream = ExtResource("5_7jktm")
 autoplay = true
 bus = &"music"
+parameters/looping = true
